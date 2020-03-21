@@ -19,8 +19,5 @@ echo '++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 python merge_subcrawlers.py >> "$log_file"
 
-## I provide the results in ../data/network_pickle so unnecessary to run this script, it takes about 63 hours to finish
-# python extract_network_pickle.py >> "$log_file"
-#
-# sleep 60
-# echo '+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++' >> "$log_file"
+sleep 60
+echo '+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++' >> "$log_file"
