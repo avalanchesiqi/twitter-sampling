@@ -17,6 +17,15 @@ It can retrieve 25M tweets per day with an estimated 70% sampling rate.
 The following image plots temporal tweet counts and sampling rates for a dataset collected from 2020-03-18 to 2020-03-20.
 ![Temporally tweet count and sampling rates](data/tweet_volume.png)
 
+## Data
+We release 2 pairs of complete/sampled retweet cascades on topic Cyberbullying (sampling rate: 0.5272) and YouTube (sampling rate: 0.9153).
+The data is hosted on [Dataverse]().
+Cyberbullying | complete | Sample
+------------ | -------------
+#cascades | 3,008,572 | 1,168,896
+avg. retweets per cascade | 15.63 | 10.97
+#cascades (≥50 retweets) | 99,952 | 29,577
+
 ## Code usage
 We provide a quickstart bash script:
 [run_all_wrangling.sh](/wrangling/run_all_wrangling.sh)
