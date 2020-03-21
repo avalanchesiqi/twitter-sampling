@@ -19,13 +19,27 @@ The following image plots temporal tweet counts and sampling rates for a dataset
 
 ## Data
 We release 2 pairs of complete/sampled retweet cascades on topic Cyberbullying (sampling rate: 0.5272) and YouTube (sampling rate: 0.9153).
-The data is hosted on [Dataverse]().
+The data is hosted on [Dataverse](https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/GW9GDM).
+
+Each line is a cascades for a root tweet, in the format of "root_tweet_id-root_user_followers:retweet_id1-retweet_user_followers1,retweet_id2-retweet_user_followers2,...".
+The tweet_id can be melt into timestamp_ms, check the [melt_snowflake function](utils/helper.py).
+
+```
+1191867779877658625-33528:1191870307100807168-348,1191870705798914048-346381,1191871164546723841-702,1191871199242063872-152274,1191872016783216641-1420,1191872283041812480-342,1191872423513247744-543,1191876372949610498-153,1191879197108658176-403,1191882411291881473-547,1191892500786696202-19,1191893301877788672-119,1191900631176556545-525,1191919125179842560-523,1191932673574539266-247
+```
 
 Cyberbullying | complete | Sample
 --- | --- | ---
 #cascades | 3,008,572 | 1,168,896
 avg. retweets per cascade | 15.63 | 10.97
 #cascades (≥50 retweets) | 99,952 | 29,577
+
+YouTube | complete | Sample
+--- | --- | ---
+#cascades | 2,022,718 | 1,803,024
+avg. retweets per cascade | 13.10 | 11.87
+#cascades (≥50 retweets) | 59,825 | 50,272
+
 
 ## Code usage
 We provide a quickstart bash script:
