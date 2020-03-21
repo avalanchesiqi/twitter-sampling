@@ -20,8 +20,9 @@ The following image plots temporal tweet counts and sampling rates for a dataset
 ## Data
 We release 2 pairs of complete/sampled retweet cascades on topic Cyberbullying (sampling rate: 0.5272) and YouTube (sampling rate: 0.9153).
 The data is hosted on [Dataverse]().
+
 Cyberbullying | complete | Sample
------------- | -------------
+--- | --- | ---
 #cascades | 3,008,572 | 1,168,896
 avg. retweets per cascade | 15.63 | 10.97
 #cascades (≥50 retweets) | 99,952 | 29,577
