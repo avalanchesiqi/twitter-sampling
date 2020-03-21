@@ -2,7 +2,7 @@
 
 We release the code and data for the following paper.
 If you use the software, datasets, or refer to its results, please cite:
-> [Siqi Wu](https://avalanchesiqi.github.io/), [Marian-Andrei Rizoiu](http://www.rizoiu.eu/), and [Lexing Xie](http://users.cecs.anu.edu.au/~xlx/). Variation across Scales: Measurement Fidelity under Twitter Data Sampling. *AAAI International Conference on Weblogs and Social Media (ICWSM)*, 2020. \[[paper](https://avalanchesiqi.github.io/files/icwsm2020sampling.pdf)\]
+> [Siqi Wu](https://avalanchesiqi.github.io/), [Marian-Andrei Rizoiu](http://www.rizoiu.eu/), and [Lexing Xie](http://users.cecs.anu.edu.au/~xlx/). Variation across Scales: Measurement Fidelity under Twitter Data Sampling. *AAAI International Conference on Weblogs and Social Media (ICWSM)*, 2020. \[[paper](https://avalanchesiqi.github.io/files/icwsm2020sampling.pdf)\|[code](https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/GW9GDM)\]
 
 ## Crawling software package: [Twitter-intact-stream](https://github.com/avalanchesiqi/twitter-intact-stream)
 Twitter-intact-stream is a tool for collecting (nearly) complete Twitter filter stream, and first used to construct datasets in this paper.
