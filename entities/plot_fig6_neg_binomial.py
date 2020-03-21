@@ -80,7 +80,7 @@ def main():
         empirical_cnt_dist = sample_to_complete_freq_dict[num_sample]
         neg_binomial_cnt_dist = []
         for x in range(num_sample, max(30, 3 * num_sample + 1)):
-            neg_binomial_cnt_dist.extend([x] * int(negative_binomial(x+1, num_sample, rho) * len(empirical_cnt_dist)))
+            neg_binomial_cnt_dist.extend([x] * int(negative_binomial(x, num_sample, rho) * len(empirical_cnt_dist)))
         ks_test = stats.ks_2samp(empirical_cnt_dist, neg_binomial_cnt_dist)
         empirical_mean = sum(empirical_cnt_dist) / len(empirical_cnt_dist)
         empirical_mean_list.append(empirical_mean)
@@ -114,7 +114,7 @@ def main():
     num_items = len(sample_to_complete_freq_dict[num_sample])
     sample_to_complete_cnt = Counter(sample_to_complete_freq_dict[num_sample])
     ax2_y_axis = [sample_to_complete_cnt[x] / num_items for x in ax2_x_axis]
-    ax2_neg_binomial_axis = [negative_binomial(x+1, num_sample, rho) for x in ax2_x_axis]
+    ax2_neg_binomial_axis = [negative_binomial(x, num_sample, rho) for x in ax2_x_axis]
 
     axes[1].plot(ax2_x_axis, ax2_y_axis, c=blue, lw=1.5, ls='-', marker='o', zorder=20, label='empirical')
     axes[1].plot(ax2_x_axis, ax2_neg_binomial_axis, c='k', lw=1.5, ls='-', marker='x', zorder=10, label='negative binomial')
