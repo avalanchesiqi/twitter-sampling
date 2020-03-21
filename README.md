@@ -10,6 +10,7 @@ Twitter-intact-stream is a tool for collecting (nearly) complete Twitter filter 
 ### Have you thought about collecting tweets related to the global pandemic COVID19?
 The posts over the Twittersphere are really boosted during the global lockdown.
 Typically, the public/free Twitter filtered streaming API allows for up to 4.32M per day, this is way below the volume of COVID19 related tweets.
+
 Checkout our collecting tool Twitter-intact-stream!
 We provide a pre-configured script to collect relevant tweets of COVID19.
 It can retrieve 25M tweets per day with an estimated 70% sampling rate.
@@ -23,4 +24,4 @@ We provide a quickstart bash script:
 This script can generate all the data files to run the experiments under the [data](/data), [entities](/entities), and [cascades](/cascades).
 
 For network analysis, another quickstart bash script is provided for generating all the data files:
-[run_network_analysis.sh.sh](/networks/run_network_analysis.sh.sh)
+[run_network_analysis.sh](/networks/run_network_analysis.sh)
