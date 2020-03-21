@@ -6,27 +6,27 @@ from scipy.stats import percentileofscore
 import matplotlib as mpl
 if platform.system() == 'Linux':
     mpl.use('Agg')  # no UI backend
-from powerlaw import Fit, plot_ccdf
+from powerlaw import plot_ccdf
 
 import matplotlib.pyplot as plt
-from matplotlib.ticker import FuncFormatter
 
 sys.path.append(os.path.join(os.path.dirname(__file__), '../'))
 from utils.helper import Timer, melt_snowflake
-from utils.metrics import mean_confidence_interval
-from utils.plot_conf import ColorPalette, hide_spines, concise_fmt
+from utils.plot_conf import ColorPalette, hide_spines
 
 
 def main():
     timer = Timer()
     timer.start()
 
+    app_name = 'cyberbullying'
+
     sample_cascade_size = {}
     sample_inter_arrival_time = []
     sample_cascade_influence = {}
     sample_cascade_influence_10m = defaultdict(int)
     sample_cascade_influence_1h = defaultdict(int)
-    with open('./sample_retweet_cyberbullying.txt', 'r') as fin:
+    with open('../data/{0}_out/sample_retweet_{0}.txt'.format(app_name), 'r') as fin:
         for line in fin:
             root_tweet, cascades = line.rstrip().split(':')
             cascades = cascades.split(',')
@@ -55,7 +55,7 @@ def main():
     complete_cascade_influence = {}
     complete_cascade_influence_10m = defaultdict(int)
     complete_cascade_influence_1h = defaultdict(int)
-    with open('./complete_retweet_cyberbullying.txt', 'r') as fin:
+    with open('../data/{0}_out/complete_retweet_{0}.txt'.format(app_name), 'r') as fin:
         for line in fin:
             root_tweet, cascades = line.rstrip().split(':')
             cascades = cascades.split(',')
@@ -82,6 +82,13 @@ def main():
 
     print('number of cascades in the complete set', len(complete_cascade_size))
     print('number of cascades in the sample set', len(sample_cascade_size))
+
+    print('mean complete size', np.mean(list(complete_cascade_size.values())))
+    print('mean sample size', np.mean(list(sample_cascade_size.values())))
+
+    print('complete #cascades (≥50 retweets)', sum([1 for x in list(complete_cascade_size.values()) if x >= 50]))
+    print('sample #cascades (≥50 retweets)', sum([1 for x in list(sample_cascade_size.values()) if x >= 50]))
+
     num_complete_cascades_in_sample = 0
     complete_cascades_in_sample_size_list = []
     num_complete_cascades_in_sample_50 = 0
@@ -110,8 +117,8 @@ def main():
     axes[0].plot([sample_median, sample_median], [0, 1], color=blue, ls='--', lw=1)
     axes[0].plot([complete_median, complete_median], [0, 1], color='k', ls='--', lw=1)
 
-    print('sample median', sample_median)
-    print('complete median', complete_median)
+    print('\ninter_arrival_time sample median', sample_median)
+    print('inter_arrival_time complete median', complete_median)
 
     axes[0].set_xscale('symlog')
     axes[0].set_xticks([0, 1, 100, 10000, 1000000])
@@ -121,7 +128,6 @@ def main():
     axes[0].legend(frameon=False, fontsize=16, ncol=1, fancybox=False, shadow=True, loc='upper right')
     axes[0].tick_params(axis='both', which='major', labelsize=16)
     axes[0].set_title('(a)', fontsize=18, pad=-3*72)
-
 
     influence_list = []
     influence_list_10m = []
