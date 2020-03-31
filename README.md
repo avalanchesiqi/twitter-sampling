@@ -16,7 +16,7 @@ Typically, the public/free Twitter filtered streaming API allows users to collec
 In our collecting tool Twitter-intact-stream, we provide a pre-configured script to collect relevant tweets of COVID19.
 It can retrieve about 26M tweets per day with an estimated 91% sampling rate.
 The following image plots temporal tweet counts and sampling rates for a dataset collected from 2020-03-23 to 2020-03-31.
-![Temporally tweet counts and sampling rates](analysis/tweet_volume.png)
+![Temporally tweet counts and sampling rates](data/tweet_volume.png)
 
 ## Data
 We release 2 pairs of complete/sampled retweet cascades on Cyberbullying (sampling rate: 0.5272) and YouTube (sampling rate: 0.9153).
