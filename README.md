@@ -1,3 +1,4 @@
+
 # Code and Data for Twitter Sampling Effects Study
 
 We release the code and data for the following paper.
@@ -5,20 +6,20 @@ If you use the software, datasets, or refer to its results, please cite:
 > [Siqi Wu](https://avalanchesiqi.github.io/), [Marian-Andrei Rizoiu](http://www.rizoiu.eu/), and [Lexing Xie](http://users.cecs.anu.edu.au/~xlx/). Variation across Scales: Measurement Fidelity under Twitter Data Sampling. *AAAI International Conference on Weblogs and Social Media (ICWSM)*, 2020. \[[paper](https://avalanchesiqi.github.io/files/icwsm2020sampling.pdf)\|[data](https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/GW9GDM)\]
 
 ## Crawling software package: [Twitter-intact-stream](https://github.com/avalanchesiqi/twitter-intact-stream)
-Twitter-intact-stream is a tool for collecting (nearly) complete Twitter filter stream, and first used to construct datasets in this paper.
+Twitter-intact-stream is a tool for collecting (nearly) complete Twitter filter stream.
+It splits the filtering predicates into multiple subsets, and tracks each set with a distinct streaming client.
 
-### Have you thought about collecting tweets related to the global pandemic COVID19?
-The posts over the Twittersphere are really boosted during the global lockdown.
-Typically, the public/free Twitter filtered streaming API allows for up to 4.32M per day, this is way below the volume of COVID19 related tweets.
+### Example: Collecting tweets related to the global pandemic COVID19
+The posts over the Twittersphere are really boosted during the global pandemic.
+Typically, the public/free Twitter filtered streaming API allows users to collect up to 4.32M per day, this is way below the volume of COVID19 related tweets.
 
-Checkout our collecting tool Twitter-intact-stream!
-We provide a pre-configured script to collect relevant tweets of COVID19.
-It can retrieve 25M tweets per day with an estimated 70% sampling rate.
-The following image plots temporal tweet counts and sampling rates for a dataset collected from 2020-03-18 to 2020-03-20.
-![Temporally tweet count and sampling rates](data/tweet_volume.png)
+In our collecting tool Twitter-intact-stream, we provide a pre-configured script to collect relevant tweets of COVID19.
+It can retrieve about 26M tweets per day with an estimated 91% sampling rate.
+The following image plots temporal tweet counts and sampling rates for a dataset collected from 2020-03-23 to 2020-03-31.
+![Temporally tweet counts and sampling rates](analysis/tweet_volume.png)
 
 ## Data
-We release 2 pairs of complete/sampled retweet cascades on topic Cyberbullying (sampling rate: 0.5272) and YouTube (sampling rate: 0.9153).
+We release 2 pairs of complete/sampled retweet cascades on Cyberbullying (sampling rate: 0.5272) and YouTube (sampling rate: 0.9153).
 The data is hosted on [Dataverse](https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/GW9GDM).
 
 Each line is a cascades for a root tweet, in the format of "root_tweet_id-root_user_followers:retweet_id1-retweet_user_followers1,retweet_id2-retweet_user_followers2,...".
@@ -49,3 +50,4 @@ This script can generate all the data files to run the experiments under the [da
 
 For network analysis, another quickstart bash script is provided for generating all the data files:
 [run_network_analysis.sh](/networks/run_network_analysis.sh)
+

@@ -43,6 +43,14 @@ def main():
             num_hashtags = num_entities - num_users
             complete_cluster_size_list.append((num_entities, num_users, num_hashtags))
     complete_sorted_by_size = sorted(enumerate(complete_cluster_size_list), key=lambda x: x[1][0], reverse=True)
+    complete_sorted_by_size_copy = []
+    complete_sorted_by_size_copy.append(complete_sorted_by_size[0])
+    complete_sorted_by_size_copy.append(complete_sorted_by_size[4])
+    complete_sorted_by_size_copy.append(complete_sorted_by_size[5])
+    complete_sorted_by_size_copy.append(complete_sorted_by_size[3])
+    complete_sorted_by_size_copy.append(complete_sorted_by_size[2])
+    complete_sorted_by_size_copy.append(complete_sorted_by_size[1])
+    complete_sorted_by_size = complete_sorted_by_size_copy
     print(complete_sorted_by_size)
 
     sample_cluster_size_list = []
@@ -54,6 +62,14 @@ def main():
             num_hashtags = num_entities - num_users
             sample_cluster_size_list.append((num_entities, num_users, num_hashtags))
     sample_sorted_by_size = sorted(enumerate(sample_cluster_size_list), key=lambda x: x[1][0], reverse=True)
+    sample_sorted_by_size_copy = []
+    sample_sorted_by_size_copy.append(sample_sorted_by_size[0])
+    sample_sorted_by_size_copy.append(sample_sorted_by_size[1])
+    sample_sorted_by_size_copy.append(sample_sorted_by_size[4])
+    sample_sorted_by_size_copy.append(sample_sorted_by_size[2])
+    sample_sorted_by_size_copy.append(sample_sorted_by_size[5])
+    sample_sorted_by_size_copy.append(sample_sorted_by_size[3])
+    sample_sorted_by_size = sample_sorted_by_size_copy
     print(sample_sorted_by_size)
 
     complete_clusters_list = []
