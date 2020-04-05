@@ -146,7 +146,7 @@ def main():
     axes[0].set_ylabel(r'sampling rate $\rho_t$', fontsize=16)
     axes[0].tick_params(axis='both', which='major', labelsize=16)
     axes[0].legend(frameon=False, fontsize=16, ncol=1, fancybox=False, shadow=True)
-    axes[0].set_title('(a)', size=18, pad=-3*72)
+    axes[0].set_title('(a)', size=18, pad=-3*72, y=1.0001)
 
     axes[1].axvline(x=657, ymin=0, ymax=0.4, c='k', ls='--')
     axes[1].text(667, 0.2, 'x=657', size=18, ha='left', va='center')
@@ -155,7 +155,7 @@ def main():
     axes[1].set_ylim([-0.05, 1.05])
     axes[1].set_yticks([0, 0.25, 0.5, 0.75, 1.0])
     axes[1].tick_params(axis='both', which='major', labelsize=16)
-    axes[1].set_title('(b)', size=18, pad=-3*72)
+    axes[1].set_title('(b)', size=18, pad=-3*72, y=1.0001)
 
     hide_spines(axes)
 

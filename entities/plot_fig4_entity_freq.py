@@ -166,11 +166,11 @@ def main():
     axes[0].set_yticks([1, 0.01, 0.0001, 0.000001])
     axes[0].set_ylabel('$P(X \geq x)$', fontsize=16)
     axes[0].legend(frameon=False, fontsize=16, ncol=1, fancybox=False, shadow=True, loc='lower left')
-    axes[0].set_title('(a) user posting', fontsize=18, pad=-3*72)
+    axes[0].set_title('(a) user posting', fontsize=18, pad=-3*72, y=1.0001)
 
     axes[1].set_xticks([0, 1, 100, 10000, 1000000])
     axes[1].set_yticks([1, 0.1, 0.001, 0.00001])
-    axes[1].set_title('(b) hashtag', fontsize=18, pad=-3*72)
+    axes[1].set_title('(b) hashtag', fontsize=18, pad=-3*72, y=1.0001)
 
     hide_spines(axes)
 

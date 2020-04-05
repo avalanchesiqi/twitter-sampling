@@ -237,6 +237,7 @@ def main():
     num_missing_by_counting = len(showcase_complete_tid_list) - len(showcase_retrieved_tid_list)
     num_missing_by_estimating = count_track(showcase_track_list, start_with_rate=True, subcrawler=False)
     num_observed_tweets = len(showcase_retrieved_tid_list)
+    ax1.tick_params(axis='x', which='major', labelsize=10)
     ax1.tick_params(axis='y', which='both', length=0)
     ax1.set_yticklabels(['missing tweets\n{0}/{1}'.format(num_missing_by_estimating, num_missing_by_counting),
                          'collected tweets\n{0}'.format(num_observed_tweets)], fontsize=10)
@@ -246,7 +247,7 @@ def main():
     ax1.spines['left'].set_visible(False)
     ax1.spines['top'].set_visible(False)
     ax1.spines['bottom'].set_visible(False)
-    ax1.set_title('(a)', fontsize=11, pad=-1.35*72)
+    ax1.set_title('(a)', fontsize=11, pad=-1.35*72, y=1.0001)
 
     bplot = ax2.boxplot([mape_dict['cyberbullying'], mape_dict['youtube']], labels=['Cyberbullying', 'YouTube'],
                         widths=0.5, showfliers=False, showmeans=False,
@@ -262,7 +263,7 @@ def main():
     ax2.set_ylabel('MAPE', fontsize=10)
     ax2.spines['right'].set_visible(False)
     ax2.spines['top'].set_visible(False)
-    ax2.set_title('(b)', fontsize=11, pad=-1.35*72)
+    ax2.set_title('(b)', fontsize=11, pad=-1.35*72, y=1.0001)
 
     plt.tight_layout(rect=[0, 0.03, 1, 1])
     plt.savefig('../images/validate_ratemsg.pdf', bbox_inches='tight')

@@ -66,7 +66,7 @@ def main():
     confusion_sampling_rate = np.load('../data/{0}_out/{0}_confusion_sampling_rate.npy'.format(app_name))
     confusion_sampling_rate = np.nan_to_num(confusion_sampling_rate)
 
-    load_external_data = True
+    load_external_data = False
     if not load_external_data:
         sample_entity_stats = defaultdict(int)
         with open('../data/{0}_out/user_{0}_all.txt'.format(app_name), 'r') as fin:

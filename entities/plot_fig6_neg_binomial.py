@@ -99,7 +99,7 @@ def main():
     axes[0].set_ylim([0, 0.17])
     axes[0].yaxis.set_major_formatter(FuncFormatter(lambda x, _: '{0:.2f}'.format(x)))
     axes[0].tick_params(axis='both', which='major', labelsize=16)
-    axes[0].set_title('(a)', fontsize=18, pad=-3*72)
+    axes[0].set_title('(a)', fontsize=18, pad=-3*72, y=1.0001)
 
     # show an example
     num_sample = np.argmin(ax1_y_axis) + 1
@@ -126,7 +126,7 @@ def main():
     axes[1].set_yticks([0, 0.05, 0.1])
     axes[1].tick_params(axis='both', which='major', labelsize=16)
     axes[1].legend(frameon=False, fontsize=16, ncol=1, fancybox=False, shadow=True, loc='upper left')
-    axes[1].set_title('(b)', fontsize=18, pad=-3*72)
+    axes[1].set_title('(b)', fontsize=18, pad=-3*72, y=1.0001)
 
     axes[1].plot([empirical_mean_list[num_sample - 1], empirical_mean_list[num_sample - 1]], [axes[1].get_ylim()[0], 0.1], color=blue, ls='--', lw=1)
     axes[1].plot([expected_mean_list[num_sample - 1], expected_mean_list[num_sample - 1]], [axes[1].get_ylim()[0], 0.1], color='k', ls='--', lw=1)

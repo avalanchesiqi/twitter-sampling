@@ -1,4 +1,3 @@
-import seaborn as sns
 from collections.abc import Iterable
 from .vars import ColorPalette
 
@@ -28,13 +27,3 @@ def hide_spines(axes):
     else:
         axes.spines['right'].set_visible(False)
         axes.spines['top'].set_visible(False)
-
-
-def plot_hist(lst, ax, xlabel, ylabel, title, kwargs=None):
-    if kwargs is None:
-        sns.distplot(lst, bins=100, color=ColorPalette.BLUE, ax=ax)
-    else:
-        sns.distplot(lst, bins=100, color=ColorPalette.BLUE, ax=ax, **kwargs)
-    ax.set_xlabel(xlabel)
-    ax.set_ylabel(ylabel)
-    ax.set_title(title)

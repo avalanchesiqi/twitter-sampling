@@ -135,7 +135,7 @@ def main():
         axes[idx].set_yticks([0, 50000, 100000, 150000])
         axes[idx].yaxis.set_major_formatter(FuncFormatter(concise_fmt))
         axes[idx].tick_params(axis='both', which='major', labelsize=16)
-        axes[idx].set_title('({0}) {1}'.format(['a', 'b'][idx], lang_list[idx]), size=18, pad=-3*72)
+        axes[idx].set_title('({0}) {1}'.format(['a', 'b'][idx], lang_list[idx]), size=18, pad=-3*72, y=1.0001)
 
     axes[0].set_ylabel('#tweets', fontsize=16)
     axes[1].legend(frameon=False, fontsize=16, ncol=1, fancybox=False, shadow=True, loc='lower right')

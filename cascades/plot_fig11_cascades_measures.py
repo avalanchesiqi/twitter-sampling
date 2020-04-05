@@ -127,7 +127,7 @@ def main():
     axes[0].set_ylabel('$P(X \geq x)$', fontsize=16)
     axes[0].legend(frameon=False, fontsize=16, ncol=1, fancybox=False, shadow=True, loc='upper right')
     axes[0].tick_params(axis='both', which='major', labelsize=16)
-    axes[0].set_title('(a)', fontsize=18, pad=-3*72)
+    axes[0].set_title('(a)', fontsize=18, pad=-3*72, y=1.0001)
 
     influence_list = []
     influence_list_10m = []
@@ -163,7 +163,7 @@ def main():
     # axes[1].set_ylabel('$P(X \geq x)$', fontsize=16)
     axes[1].legend(frameon=False, fontsize=16, ncol=1, fancybox=False, shadow=True, loc='upper right')
     axes[1].tick_params(axis='both', which='major', labelsize=16)
-    axes[1].set_title('(b)', fontsize=18, pad=-3*72)
+    axes[1].set_title('(b)', fontsize=18, pad=-3*72, y=1.0001)
 
     hide_spines(axes)
 
